@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, type JSX } from "react";
 import styled from "styled-components";
 import { useWebPubSub } from "./hooks/useWebPubSub";
 import type { ChatMsg } from "./types";
@@ -21,7 +21,7 @@ const Bubble = styled.div`
  *
  * @returns {JSX.Element} - The rendered chat application.
  */
-export default function App() {
+export default function App(): JSX.Element {
   // State to store the current chat room name. Defaults to "lobby".
   const [room, setRoom] = useState("lobby");
 
@@ -108,29 +108,29 @@ export default function App() {
 
 /**
  * KEY TAKEAWAYS FOR VUE DEVELOPERS:
- * 
+ *
  * 1. REACT HOOKS vs VUE COMPOSITION API:
  *    - useState ~ ref()
  *    - useEffect ~ watchEffect/onMounted/onUnmounted
  *    - useMemo ~ computed()
  *    - Custom hooks ~ composables
- * 
+ *
  * 2. COMPONENT PATTERNS:
  *    - Functional components with hooks (modern React)
  *    - Props down, events up (similar to Vue)
  *    - Controlled components for form inputs
- * 
+ *
  * 3. STYLING APPROACHES:
  *    - Styled Components (CSS-in-JS)
  *    - CSS Modules
  *    - Regular CSS classes
  *    - Inline styles (for dynamic styles)
- * 
+ *
  * 4. STATE MANAGEMENT:
  *    - Local state: useState
  *    - Global state: Context API, Redux, Zustand
  *    - Server state: React Query, SWR
- * 
+ *
  * 5. TYPESCRIPT INTEGRATION:
  *    - Type props and state
  *    - Use interfaces for complex objects
